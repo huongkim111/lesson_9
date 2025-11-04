@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số ngày trong tháng</title>
+</head>
+<body>
+    <form>
+        <h2>Kiểm tra số ngày trong tháng</h2>
+        <label for="month"><strong>Chọn tháng</strong></label>
+        <select name="month" id="month">
+            <option value="Jan">January</option>
+            <option value="Feb">February</option>
+            <option value="Mar">March</option>
+            <option value="Apr">April</option>
+            <option value="May">May</option>
+            <option value="Jun">June</option>
+            <option value="Jul">July</option>
+            <option value="Aug">August</option>
+            <option value="Sep">September</option>
+            <option value="Oct">October</option>
+            <option value="Nov">November</option>
+            <option value="Dec">December</option>
+        </select>
+        <button type="button" onclick="checkdays()">Kiểm tra</button>
+        <h3 id ="result"></h3>
+    </form>
+<script>
+    function checkdays() {
+        let month = document.getElementById('month').value;
+        let numberofdays = ``;
+        switch (month) {
+            case `Jan`:
+            case `March`:
+            case `May`:
+            case `Jul`:
+            case `Aug`:
+            case `Oct`:
+            case `Dec`:
+                numberofdays = `31`;
+                break;
+            case `Feb`:
+                numberofdays = `28 hoặc 29`;
+                break;
+            case `Apr`:
+            case `June`:
+            case `Sep`:
+            case `Nov`:
+                numberofdays = `31`;
+                break;
+            default:
+                `Không có kết quả phù hợp`
+        }
+        document.getElementById('result').innerHTML = `Số ngày trong tháng: ` + numberofdays + ` ngày`;
+    }
+</script>
+</body>
+</html>
